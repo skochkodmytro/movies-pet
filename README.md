@@ -1,50 +1,47 @@
-# Welcome to your Expo app 👋
+# Опис архітектури проекту та інструкція запуску
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Архітектура проекту
 
-## Get started
+### Основні папки
 
-1. Install dependencies
+- app/ – містить навігацію між екранами.
+- assets/ – ресурси, такі як іконки, зображення, шрифти.
+- components/ – спільні компоненти для повторного використання.
+- constants/ – файли з глобальними константами (наприклад, кольори, стилі).
+- features/ – основний функціонал додатку, організований за модулями. Кожен модуль може включати папки api,components,views,hooks та інші, які релевантні до цього модуля. Також кожен модуль може експортувати частину функціоналу:
+  - movie-details/ – логіка інформації про фільм.
+  - movies/ – логіка для пошуку та відображення фільмів.
+  - persons/ – логіка роботи з суб’єктом person (актори, режисери та інші).
+- hooks/ – користувацькі хуки для управління станом та іншою логікою.
+- providers/ – контексти для управління глобальним станом (наприклад, обрані фільми).
+- utils/ – утилітні функції.
 
-   ```bash
-   npm install
-   ```
+---
 
-2. Start the app
+## Запуск проекту
 
-   ```bash
-    npx expo start
-   ```
+### 1. Встановлення необхідних інструментів
 
-In the output, you'll find options to open the app in a
+- [Node.js](https://nodejs.org/) (рекомендована версія – LTS)
+- npm або yarn
+- Expo CLI:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```sh
+  npm install -g expo-cli
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Клонування репозиторію та встановлення залежностей
 
-## Learn more
+```sh
+git clone https://github.com/skochkodmytro/movies-pet
+cd movies-pet
+npm install # або yarn install
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+### 3. Запуск проекту
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```sh
+expo start
+```
 
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Ця команда відкриє Expo Developer Tools у браузері, де можна обрати емулятор або підключити реальний пристрій через Expo Go. Ви можете просканувати QR-код у терміналі за допомогою камери.
