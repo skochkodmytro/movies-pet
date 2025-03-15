@@ -1,47 +1,47 @@
-# Опис архітектури проекту та інструкція запуску
+# Project Architecture Description and Setup Guide
 
-## Архітектура проекту
+## Project Architecture
 
-### Основні папки
+### Main Folders
 
-- app/ – містить навігацію між екранами.
-- assets/ – ресурси, такі як іконки, зображення, шрифти.
-- components/ – спільні компоненти для повторного використання.
-- constants/ – файли з глобальними константами (наприклад, кольори, стилі).
-- features/ – основний функціонал додатку, організований за модулями. Кожен модуль може включати папки api,components,views,hooks та інші, які релевантні до цього модуля. Також кожен модуль може експортувати частину функціоналу:
-  - movie-details/ – логіка інформації про фільм.
-  - movies/ – логіка для пошуку та відображення фільмів.
-  - persons/ – логіка роботи з суб’єктом person (актори, режисери та інші).
-- hooks/ – користувацькі хуки для управління станом та іншою логікою.
-- providers/ – контексти для управління глобальним станом (наприклад, обрані фільми).
-- utils/ – утилітні функції.
+- app/ – contains navigation between screens.
+- assets/ – resources like icons, images, and fonts.
+- components/ – shared components for reuse.
+- constants/ – files with global constants (e.g., colors, styles).
+- features/ – core app functionality organized by modules. Each module may include subfolders like api, components, views, hooks, and others that are relevant to the module. Each module can also export parts of its functionality:
+  - movie-details/ – logic for movie details.
+  - movies/ – logic for searching and displaying movies.
+  - persons/ – logic for handling the person entity (actors, directors, etc.).
+- hooks/ – custom hooks for managing state and other logic.
+- providers/ – contexts for managing global state (e.g., favorite movies).
+- utils/ – utility functions.
 
 ---
 
-## Запуск проекту
+## Running the Project
 
-### 1. Встановлення необхідних інструментів
+### 1. Install Necessary Tools
 
-- [Node.js](https://nodejs.org/) (рекомендована версія – LTS)
-- npm або yarn
+- [Node.js](https://nodejs.org/) (recommended version – LTS)
+- npm or yarn
 - Expo CLI:
 
 ```sh
   npm install -g expo-cli
 ```
 
-### 2. Клонування репозиторію та встановлення залежностей
+### 2. Clone the Repository and Install Dependencies
 
 ```sh
 git clone https://github.com/skochkodmytro/movies-pet
 cd movies-pet
-npm install # або yarn install
+npm install # or yarn install
 ```
 
-### 3. Запуск проекту
+### 3. Run the Project
 
 ```sh
 expo start
 ```
 
-Ця команда відкриє Expo Developer Tools у браузері, де можна обрати емулятор або підключити реальний пристрій через Expo Go. Ви можете просканувати QR-код у терміналі за допомогою камери.
+This command will open Expo Developer Tools in your browser, where you can choose an emulator or connect a real device via Expo Go. You can scan the QR code in the terminal with your camera.
